@@ -4,7 +4,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddSingleton<MockSerivce>();
+//builder.Services.AddSingleton<MockSerivce>();
+
+builder.Services.AddScoped<IMyService, MyService>();
+builder.Services.AddHostedService<LongTermSerive>();
 
 builder.Services.AddControllers();
 
